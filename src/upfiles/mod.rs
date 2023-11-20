@@ -60,7 +60,13 @@ impl UpFilesApi {
                 let status = response.status;
                 if status == "success" {
                     let url = response.url;
-                    println!("{url}")
+                    let api = ShrinkmeApi::new();
+                    let shrink_response = api.shrink_link(url).await?;
+                    if shrink_response.status == "success" {
+                        println!("{}", shrink_response.shortened_url.green());
+                    } else {
+                        println!("{}", "could not shrink the link".red())
+                    }
                 } else {
                     println!("{}", "could not upload file".red())
                 }

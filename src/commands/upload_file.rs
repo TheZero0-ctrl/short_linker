@@ -1,5 +1,4 @@
 use crate::prelude::*;
-use crate::zipper;
 
 #[derive(Debug, Args)]
 pub struct UploadFile {

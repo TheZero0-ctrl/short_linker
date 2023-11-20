@@ -3,6 +3,7 @@ mod cli;
 mod commands;
 mod upfiles;
 mod zipper;
+mod shrinkme;
 
 mod prelude {
     pub use crate::commands::*;
@@ -13,6 +14,7 @@ mod prelude {
     pub use anyhow::Error;
     pub use crate::upfiles::*;
     pub use crate::zipper::*;
+    pub use crate::shrinkme::*;
     pub use serde::{Deserialize, Serialize};
     pub use colored::*;
 }
